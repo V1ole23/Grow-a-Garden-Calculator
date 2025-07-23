@@ -10,5 +10,11 @@ https://v1ole23.github.io/Grow-a-Garden-Calculator/
 
     "Auto Total Price" and "Auto Weight" 
 "Auto Total Price" and "Auto Weight" on the left. "Manual Total Price" and "Manual Weight" on the right.
-When filling in the price manually, do not use a period (.) or comma (,). For example, ✅ : 12345, ❌: 12.345
-Entering the weight manually, using decimal numbers. For example, ✅ : 12.00 and 15.45, ❌ : 1200, 2545.
+When filling in the price manually, do not use a period (.) or comma (,). For example, 
+Entering the weight manually, using decimal numbers. For example, 
+
+    Example Manual Total Price
+✅ : 12345 ❌: 12.345
+
+    Example Manual Weight
+✅ : 12.00 or 15.45 ❌ : 1200 or 2545.
