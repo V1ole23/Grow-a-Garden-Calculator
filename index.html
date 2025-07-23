@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GAG Weight Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2 style="text-align:center;">Form Mutasi Tumbuhan</h2>
+  <form id="formMutasi">
+    <label>Crop List:</label>
+    <select id="jenisTumbuhan">
+      <option value="">-- Pilih Tanaman --</option>
+      <option value="Carrot">Carrot</option>
+      <option value="Strawberry">Strawberry</option>
+      <option value="Blueberry">Blueberry</option>
+      <option value="Orange Tulip">Orange Tulip</option>
+      <option value="Tomato">Tomato</option>
+      <option value="Daffodil">Daffodil</option>
+      <option value="Corn">Corn</option>
+      <option value="Watermelon">Watermelon</option>
+      <option value="Pumpkin">Pumpkin</option>
+      <option value="Apple">Apple</option>
+      <option value="Lilac">Lilac</option>
+      <option value="Bamboo">Bamboo</option>
+      <option value="Coconut">Coconut</option>
+      <option value="Cactus">Cactus</option>
+      <option value="Dragon Fruit">Dragon Fruit</option>
+      <option value="Mango">Mango</option>
+      <option value="Bone Blossom">Bone Blossom</option>
+      <option value="Grape">Grape</option>
+      <option value="Mushroom">Mushroom</option>
+      <option value="Pepper">Pepper</option>
+      <option value="Cacao">Cacao</option>
+      <option value="Sunflower">Sunflower</option>
+      <option value="Candy Blossom">Candy Blossom</option>
+      <option value="Beanstalk">Beanstalk</option>
+      <option value="Ember Lily">Ember Lily</option>
+      <option value="Sugar Apple">Sugar Apple</option>
+      <option value="Burning Bud">Burning Bud</option>
+      <option value="Giant Pinecone">Giant Pinecone</option>
+    </select>
+
+    <label>Minimum Sheckle:</label>
+    <input id="minSheckle" type="text" readonly class="readonly">
+
+    <label>∑Value Mutation (Total):</label>
+    <input id="valueMutation" type="number" readonly class="readonly">
+
+    <div>
+      <label>Mutation List:</label>
+      <select id="sortOrder">
+        <option value="name-asc">A → Z</option>
+        <option value="name-desc">Z → A</option>
+        <option value="value-asc">MinValue → MaxValue</option>
+        <option value="value-desc">MaxValue → MinValue</option>
+      </select>
+    </div>
+
+    <table id="mutationTable">
+      <thead>
+        <tr><th>Nama Mutasi</th><th>Value</th><th>Pilih</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <label>Number of Mutation:</label>
+    <input id="numMutation" type="number" readonly class="readonly">
+
+    <label>Growth Mutation:</label>
+    <select id="growthMutation">
+      <option value="">-- Pilih --</option>
+      <option value="1">None (1)</option>
+      <option value="1">Ripe (1)</option>
+      <option value="20">Gold (20)</option>
+      <option value="50">Rainbow (50)</option>
+    </select>
+
+    <label>Minimum Weight (Kg):</label>
+    <input id="minWeight" type="text" readonly class="readonly">
+
+    <label>Total Price:</label>
+    <div class="dual-input">
+      <input id="autoTotalPrice" type="text" readonly class="readonly" placeholder="Auto">
+      <input id="manualTotalPrice" type="number" placeholder="Enter a whole number without decimals.">
+    </div>
+
+    <label>Weight (Kg):</label>
+    <div class="dual-input">
+      <input id="autoWeight" type="number" readonly class="readonly" placeholder="Auto">
+      <input id="manualWeight" step="0.01" type="number" placeholder="Enter a number with a dot (e.g., 3.5).">
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
