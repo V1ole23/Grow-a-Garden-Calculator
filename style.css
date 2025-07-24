@@ -122,11 +122,16 @@ input.readonly::placeholder {
 }
 
 .card-label.selected {
-  border-color: rgb(32, 26, 26);
-  outline: 2px solid white;
-  outline-offset: -2px;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 3px;
   background-color: transparent !important;
   color: white;
+}
+
+.card-label:hover {
+  text-decoration: underline;
+  text-decoration-color: #aaa;
 }
 
 /* Growth Mutation Grid */
