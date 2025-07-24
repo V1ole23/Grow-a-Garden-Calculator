@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GAG Weight Calculator</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h2 class="title">Grow a Garden Calculator</h2>
 
   <form id="formMutasi">
     <div class="section-header">Crop List</div>
-
     <select id="cropSortOrder">
       <option value="name-asc">A → Z</option>
       <option value="name-desc">Z → A</option>
@@ -22,10 +22,10 @@
     <div id="cropGrid" class="grid"></div>
 
     <label><b>Minimum Sheckle</b></label>
-    <input id="minSheckle" type="text" readonly class="readonly">
+    <input id="minSheckle" type="text" readonly class="readonly" />
 
     <label><b>∑Value Mutation (Total)</b></label>
-    <input id="valueMutation" type="number" readonly class="readonly">
+    <input id="valueMutation" type="number" readonly class="readonly" />
 
     <div class="section-header">Mutation List</div>
     <select id="sortOrder">
@@ -39,29 +39,24 @@
     <div id="mutationGrid" class="grid"></div>
 
     <label><b>Number of Mutation</b></label>
-    <input id="numMutation" type="number" readonly class="readonly">
+    <input id="numMutation" type="number" readonly class="readonly" />
 
     <label><b>Growth Mutation</b></label>
-    <select id="growthMutation" class="custom-grid-select">
-      <option value="1">None (1)</option>
-      <option value="1">Ripe (1)</option>
-      <option value="20">Gold (20)</option>
-      <option value="50">Rainbow (50)</option>
-    </select>
+    <div id="growthMutationGrid" class="grid growth-grid"></div>
 
     <label><b>Minimum Weight (Kg)</b></label>
-    <input id="minWeight" type="text" readonly class="readonly">
+    <input id="minWeight" type="text" readonly class="readonly" />
 
     <label><b>Total Price</b></label>
     <div class="dual-input">
-      <input id="autoTotalPrice" type="text" readonly class="readonly" placeholder="Input your crop data">
-      <input id="manualTotalPrice" type="number" placeholder="Enter Whole Number">
+      <input id="autoTotalPrice" type="text" readonly class="readonly" placeholder="Input your crop data" />
+      <input id="manualTotalPrice" type="number" placeholder="Enter Whole Number" />
     </div>
 
     <label><b>Weight (Kg)</b></label>
     <div class="dual-input">
-      <input id="autoWeight" type="text" readonly class="readonly" placeholder="Input your crop data">
-      <input id="manualWeight" step="0.01" type="number" placeholder="Enter Decimal Number">
+      <input id="autoWeight" type="text" readonly class="readonly" placeholder="Input your crop data" />
+      <input id="manualWeight" step="0.01" type="number" placeholder="Enter Decimal Number" />
     </div>
   </form>
 
