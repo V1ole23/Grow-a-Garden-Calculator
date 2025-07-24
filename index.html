@@ -6,88 +6,62 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2 style="text-align:center;">Grow a Garden Calculator</h2>
+  <h2 class="title">Grow a Garden Calculator</h2>
+
   <form id="formMutasi">
-    <label>Crop List:</label>
-    <select id="jenisTumbuhan">
-      <option value="">-- Select --</option>
-      <option value="Carrot">Carrot</option>
-      <option value="Strawberry">Strawberry</option>
-      <option value="Blueberry">Blueberry</option>
-      <option value="Orange Tulip">Orange Tulip</option>
-      <option value="Tomato">Tomato</option>
-      <option value="Daffodil">Daffodil</option>
-      <option value="Corn">Corn</option>
-      <option value="Watermelon">Watermelon</option>
-      <option value="Pumpkin">Pumpkin</option>
-      <option value="Apple">Apple</option>
-      <option value="Lilac">Lilac</option>
-      <option value="Bamboo">Bamboo</option>
-      <option value="Coconut">Coconut</option>
-      <option value="Cactus">Cactus</option>
-      <option value="Dragon Fruit">Dragon Fruit</option>
-      <option value="Mango">Mango</option>
-      <option value="Bone Blossom">Bone Blossom</option>
-      <option value="Grape">Grape</option>
-      <option value="Mushroom">Mushroom</option>
-      <option value="Pepper">Pepper</option>
-      <option value="Cacao">Cacao</option>
-      <option value="Sunflower">Sunflower</option>
-      <option value="Candy Blossom">Candy Blossom</option>
-      <option value="Beanstalk">Beanstalk</option>
-      <option value="Ember Lily">Ember Lily</option>
-      <option value="Sugar Apple">Sugar Apple</option>
-      <option value="Burning Bud">Burning Bud</option>
-      <option value="Giant Pinecone">Giant Pinecone</option>
+    <div class="section-header">Crop List</div>
+
+    <select id="cropSortOrder">
+      <option value="name-asc">A → Z</option>
+      <option value="name-desc">Z → A</option>
+      <option value="value-asc">MinValue → MaxValue</option>
+      <option value="value-desc">MaxValue → MinValue</option>
     </select>
 
-    <label>Minimum Sheckle:</label>
+    <button type="button" id="showCropBtn" class="toggle-button">Select Crop</button>
+    <div id="cropGrid" class="grid"></div>
+
+    <label><b>Minimum Sheckle</b></label>
     <input id="minSheckle" type="text" readonly class="readonly">
 
-    <label>∑Value Mutation (Total):</label>
+    <label><b>∑Value Mutation (Total)</b></label>
     <input id="valueMutation" type="number" readonly class="readonly">
 
-    <div>
-      <label>Mutation List:</label>
-      <select id="sortOrder">
-        <option value="name-asc">A → Z</option>
-        <option value="name-desc">Z → A</option>
-        <option value="value-asc">MinValue → MaxValue</option>
-        <option value="value-desc">MaxValue → MinValue</option>
-      </select>
-    </div>
+    <div class="section-header">Mutation List</div>
+    <select id="sortOrder">
+      <option value="name-asc">A → Z</option>
+      <option value="name-desc">Z → A</option>
+      <option value="value-asc">MinValue → MaxValue</option>
+      <option value="value-desc">MaxValue → MinValue</option>
+    </select>
 
-    <table id="mutationTable">
-      <thead>
-        <tr><th>Mutation List</th><th>Value</th><th>Select</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <button type="button" id="showMutationBtn" class="toggle-button">Show Mutation List</button>
+    <div id="mutationGrid" class="grid"></div>
 
-    <label>Number of Mutation:</label>
+    <label><b>Number of Mutation</b></label>
     <input id="numMutation" type="number" readonly class="readonly">
 
-    <label>Growth Mutation:</label>
-    <select id="growthMutation">
+    <label><b>Growth Mutation</b></label>
+    <select id="growthMutation" class="custom-grid-select">
       <option value="1">None (1)</option>
       <option value="1">Ripe (1)</option>
       <option value="20">Gold (20)</option>
       <option value="50">Rainbow (50)</option>
     </select>
 
-    <label>Minimum Weight (Kg):</label>
+    <label><b>Minimum Weight (Kg)</b></label>
     <input id="minWeight" type="text" readonly class="readonly">
 
-    <label>Total Price:</label>
+    <label><b>Total Price</b></label>
     <div class="dual-input">
-      <input id="autoTotalPrice" type="text" readonly class="readonly" placeholder="Auto">
-      <input id="manualTotalPrice" type="number" placeholder="Enter a whole number without decimals.">
+      <input id="autoTotalPrice" type="text" readonly class="readonly" placeholder="Input your crop data">
+      <input id="manualTotalPrice" type="number" placeholder="Enter Whole Number">
     </div>
 
-    <label>Weight (Kg):</label>
+    <label><b>Weight (Kg)</b></label>
     <div class="dual-input">
-      <input id="autoWeight" type="number" readonly class="readonly" placeholder="Auto">
-      <input id="manualWeight" step="0.01" type="number" placeholder="Enter a number with a dot (e.g., 3.5).">
+      <input id="autoWeight" type="text" readonly class="readonly" placeholder="Input your crop data">
+      <input id="manualWeight" step="0.01" type="number" placeholder="Enter Decimal Number">
     </div>
   </form>
 
