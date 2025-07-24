@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   background: #000;
@@ -30,7 +31,6 @@ label {
   margin-top: 10px;
   font-weight: bold;
 }
-
 
 input,
 select {
@@ -65,6 +65,16 @@ input.readonly::placeholder {
   width: 50%;
 }
 
+/* Perbesar ukuran input harga & berat */
+#autoTotalPrice,
+#autoWeight,
+#manualTotalPrice,
+#manualWeight {
+  font-size: 1.1rem;
+  padding: 10px;
+  height: 45px;
+}
+
 .toggle-button {
   margin-top: 10px;
   padding: 6px 10px;
@@ -80,6 +90,7 @@ input.readonly::placeholder {
   background: #666;
 }
 
+/* Grid Layout */
 .grid {
   display: none;
   grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
@@ -88,8 +99,7 @@ input.readonly::placeholder {
 }
 
 .crop-card,
-.mutation-card,
-.growth-card {
+.mutation-card {
   background: #444;
   border: 1px solid #666;
   padding: 0;
@@ -112,51 +122,22 @@ input.readonly::placeholder {
 }
 
 .card-label.selected {
-  text-decoration: underline;
-  text-decoration-color: white;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  border-color: rgb(32, 26, 26);
+  outline: 2px solid white;
+  outline-offset: -2px;
   background-color: transparent !important;
   color: white;
 }
 
-.card-label:hover {
-  text-decoration: underline;
-  text-decoration-color: #aaa;
-}
-
+/* Growth Mutation Grid */
 .growth-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-top: 10px;
 }
 
-/* Warna khusus untuk Growth Mutation */
-.card-label.gold {
-  color: gold;
-}
-
-@keyframes rainbow-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-.card-label.rainbow {
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 400% 100%;
-  animation: rainbow-move 6s ease-in-out infinite alternate;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-
-
-.card-label.white {
-  color: white;
-}
-
+/* Responsive Styling */
 @media (max-width: 600px) {
   form {
     padding: 15px;
@@ -188,13 +169,4 @@ input.readonly::placeholder {
   .growth-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-#autoTotalPrice,
-#autoWeight,
-#manualTotalPrice,
-#manualWeight {
-  font-size: 1.1rem;
-  padding: 10px;
-  height: 45px;
 }
