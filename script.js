@@ -124,10 +124,10 @@ function populateMutationGrid() {
 
 function populateGrowthMutationGrid() {
   const growthOptions = [
-    { name: "None (1)", value: "1", class: "white" },
-    { name: "Ripe (1)", value: "1", class: "white" },
-    { name: "Gold (20)", value: "20", class: "gold" },
-    { name: "Rainbow (50)", value: "50", class: "rainbow" }
+    { name: "None (1)", value: "1", class: "" },
+    { name: "Ripe (1)", value: "1", class: "" },
+    { name: "Gold (20)", value: "20", class: "" },
+    { name: "Rainbow (50)", value: "50", class: "" }
   ];
 
   growthMutationGrid.innerHTML = '';
