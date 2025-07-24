@@ -129,11 +129,6 @@ input.readonly::placeholder {
   color: white;
 }
 
-.card-label:hover {
-  text-decoration: underline;
-  text-decoration-color: #aaa;
-}
-
 /* Growth Mutation Grid */
 .growth-grid {
   display: grid;
