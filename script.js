@@ -1,5 +1,3 @@
-// script.js
-
 const cropData = {
   "Carrot": [15, 0.26], "Strawberry": [14, 0.29], "Blueberry": [18, 0.14],
   "Orange Tulip": [767, 0.04], "Tomato": [27, 0.35], "Daffodil": [903, 0.14],
@@ -27,13 +25,13 @@ const mutationValues = {
 
 let selectedCrop = null;
 const selectedMutations = new Set();
+let selectedGrowth = "1";
 
-const jenisTumbuhan = document.getElementById('jenisTumbuhan');
 const minSheckle = document.getElementById('minSheckle');
 const minWeight = document.getElementById('minWeight');
 const valueMutation = document.getElementById('valueMutation');
 const numMutation = document.getElementById('numMutation');
-const growthMutation = document.getElementById('growthMutation');
+const growthMutationGrid = document.getElementById('growthMutationGrid');
 const autoTotalPrice = document.getElementById('autoTotalPrice');
 const manualTotalPrice = document.getElementById('manualTotalPrice');
 const autoWeight = document.getElementById('autoWeight');
@@ -64,7 +62,7 @@ function calculateAuto() {
   const bW = parseFloat(minWeight.value);
   const sM = parseFloat(valueMutation.value);
   const nM = parseFloat(numMutation.value);
-  const gM = parseFloat(growthMutation.value);
+  const gM = parseFloat(selectedGrowth);
   const manW = parseFloat(manualWeight.value);
   const manTP = parseFloat(manualTotalPrice.value);
   const mf = 1 + sM - nM;
@@ -122,6 +120,36 @@ function populateMutationGrid() {
   });
 
   updateMutationSum();
+}
+
+function populateGrowthMutationGrid() {
+  const growthOptions = [
+    { name: "None (1)", value: "1", class: "white" },
+    { name: "Ripe (1)", value: "1", class: "white" },
+    { name: "Gold (20)", value: "20", class: "gold" },
+    { name: "Rainbow (50)", value: "50", class: "rainbow" }
+  ];
+
+  growthMutationGrid.innerHTML = '';
+
+  growthOptions.forEach(option => {
+    const card = document.createElement('div');
+    card.className = 'growth-card';
+
+    const label = document.createElement('label');
+    label.className = `card-label ${option.class}`;
+    label.textContent = option.name;
+    if (selectedGrowth === option.value) label.classList.add('selected');
+
+    label.addEventListener('click', () => {
+      selectedGrowth = option.value;
+      populateGrowthMutationGrid();
+      calculateAuto();
+    });
+
+    card.appendChild(label);
+    growthMutationGrid.appendChild(card);
+  });
 }
 
 function populateCropGrid() {
@@ -186,12 +214,9 @@ cropSortOrder.addEventListener('change', () => {
   if (cropGrid.style.display === 'grid') populateCropGrid();
 });
 
-growthMutation.addEventListener('change', calculateAuto);
 manualTotalPrice.addEventListener('input', calculateAuto);
 manualWeight.addEventListener('input', calculateAuto);
 
-// Custom UI setup for Growth Mutation
-const growthMutationSelect = document.getElementById('growthMutation');
-if (growthMutationSelect) {
-  growthMutationSelect.classList.add('custom-grid-select');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  populateGrowthMutationGrid();
+});
